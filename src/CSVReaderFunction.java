@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
-public class Functions {
+public class CSVReaderFunction {
 	public void run() {
 		String csvFile = "/Users/gyektai18/Downloads/entityfacts.csv";
 		BufferedReader br = null;
@@ -41,4 +41,5 @@ public class Functions {
 
 		System.out.println("Done");
 	  }
+
 }
