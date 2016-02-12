@@ -18,10 +18,13 @@ import java.util.Scanner;
 
 public class CSVReaderFunction {
 	public void run() {
+		//Make the csvFile a string
+		//and get the file's location.
 		String csvFile = "/Users/gyektai18/Downloads/entityfacts.csv";
 		BufferedReader br = null;
 		String line = "";
 		String cvsSplitBy = ",";
+		//Create a scanner to see when enter is pressed
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Hit enter for next line");
 		try {
@@ -36,19 +39,8 @@ public class CSVReaderFunction {
 			}
 			//If these errors occur, output that. 
 			//That's my understanding of Try and catch
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (br != null) {
-				try {
-					br.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
+		} catch (IOException e) {}
+		
 		//Print done when all lines printed
 		System.out.println("Done");
 	  }
