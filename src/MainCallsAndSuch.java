@@ -15,7 +15,6 @@ public class MainCallsAndSuch {
 		//objj.getCharacter();
 		FramePanel makeIt = new FramePanel();
 		makeIt.makeTheFrame();
-		makeIt.makeTheTypingSpot();
 		
 		
 }
