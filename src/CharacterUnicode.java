@@ -14,8 +14,14 @@ public class CharacterUnicode {
 		String character = characterFinder.nextLine();
 		//Changes the string to the char
 		char ch= character.charAt(0); 
+		int code = (int) ch;
 		//Prints the Unicode value of the character
-		System.out.println( "\\u" + Integer.toHexString(ch | 0x10000).substring(1) );
-		
+		System.out.println( "Java code: \\u" + Integer.toHexString(ch | 0x10000).substring(1) );
+		System.out.println("UTF-8:" + Integer.toHexString(ch | 0x10000).substring(1) );
+		System.out.println("Hex Decimal: 0x" + Integer.toHexString(ch | 0x10000).substring(1) );
+		System.out.println("Unicode:"+ code);
+		System.out.println("Hex Entity: &#x" + Integer.toHexString(ch | 0x10000).substring(1) );
+		System.out.println("Decimal:"+ code);
+		System.out.println("Decimal Entity: &#"+ code);
 	}
 }
