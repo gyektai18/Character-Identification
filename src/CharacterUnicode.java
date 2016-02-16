@@ -9,7 +9,7 @@ public class CharacterUnicode {
 	public String getHex(char ch) {
 		//Returns the Unicode value of the character
 		return
-		 ( "\\u" + Integer.toHexString(ch | 0x10000).substring(1) );
+		("Hex Decimal: 0x" + Integer.toHexString(ch | 0x10000).substring(1) );
 		
 	}
 	
@@ -25,6 +25,23 @@ public class CharacterUnicode {
 		String decimal = "" + code;
 		return
 		decimal;
+	}
+	public String getJava(char ch){
+		return
+		( "Java code: \\u" + Integer.toHexString(ch | 0x10000).substring(1) );
+	}
+	public String getUTF8(char ch){
+		return
+		("UTF-8: " + Integer.toHexString(ch | 0x10000).substring(1) );
+	}
+	public String getHexEntity(char ch){
+		return
+		("Hex Entity: &#x" + Integer.toHexString(ch | 0x10000).substring(1) );
+	}
+	public String getDecimalEntity(char ch){
+		int code = (int) ch;
+		return
+		("Decimal Entity: &#"+ code);
 	}
 	/*
 	public String getDecimal() {

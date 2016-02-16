@@ -15,6 +15,11 @@ public class Panel extends JPanel implements ActionListener {
 	JTextField largeFont = new JTextField("Large Font");
 	JTextField description = new JTextField("Description");
 	JTextField decimal = new JTextField("Decimal");
+	JTextField decimalEntity = new JTextField("Decimal Entity");
+	JTextField hexEntity = new JTextField("Hex Entity");
+	JTextField java = new JTextField("Java Code");
+	JTextField UTF8 = new JTextField("UTF8");
+	
 	
 	
 		public Panel(){
@@ -31,12 +36,21 @@ public class Panel extends JPanel implements ActionListener {
 			hex.setPreferredSize( new Dimension( 100, 24 ) );
 			this.add(decimal);
 			decimal.setPreferredSize( new Dimension( 120, 24 ) );
-			this.add(largeFont);
-			largeFont.setPreferredSize( new Dimension( 200, 48 ) );
 			this.add(unicode);
 			unicode.setPreferredSize( new Dimension( 120, 24 ) );
 			this.add(description);
 			description.setPreferredSize( new Dimension( 200, 24 ) );
+			this.add(decimalEntity);
+			decimalEntity.setPreferredSize( new Dimension( 200, 24 ) );
+			this.add(hexEntity);
+			hexEntity.setPreferredSize( new Dimension( 200, 24 ) );
+			this.add(java);
+			java.setPreferredSize( new Dimension( 100, 24 ) );
+			this.add(UTF8);
+			UTF8.setPreferredSize( new Dimension( 100, 24 ) );
+			this.add(largeFont);
+			largeFont.setPreferredSize( new Dimension( 200, 48 ) );
+			
 			getCharacter.addActionListener(this);
 			getCharacter2.addActionListener(this);
 			getCharacter3.addActionListener(this);
@@ -65,16 +79,26 @@ public class Panel extends JPanel implements ActionListener {
 			
 			String decimalFormat = IWantChar.getDecimal(ch);
 			String unicodeFormat = IWantChar.getUnicode(ch);
+			String utfFormat = IWantChar.getUTF8(ch);
+			String hexEntFormat = IWantChar.getHexEntity(ch);
+			String decEntFormat = IWantChar.getDecimalEntity(ch);
+			String javaFormat = IWantChar.getJava(ch);
 			//String description = IWantChar.getDescription(ch);
 			
-			hex.setText("Hex: " + hexFormat);
+			
 			Font font1 = new Font("SansSerif", Font.BOLD, 40);
 			largeFont.setFont(font1);
 			largeFont.setHorizontalAlignment(JTextField.CENTER);
 			String whichCharacter = String.valueOf(ch);
 			largeFont.setText(whichCharacter);
+			hex.setText(hexFormat);
 			decimal.setText("Decimal: " + decimalFormat);
 			unicode.setText("Unicode: " + unicodeFormat);
+			java.setText(javaFormat);
+			UTF8.setText(utfFormat);
+			hexEntity.setText(hexEntFormat);
+			decimalEntity.setText(decEntFormat);
+			
 			
 			
 		}
