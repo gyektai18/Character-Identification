@@ -30,11 +30,11 @@ public class Panel extends JPanel implements ActionListener {
 			this.add(hex);
 			hex.setPreferredSize( new Dimension( 100, 24 ) );
 			this.add(decimal);
-			decimal.setPreferredSize( new Dimension( 100, 24 ) );
+			decimal.setPreferredSize( new Dimension( 120, 24 ) );
 			this.add(largeFont);
 			largeFont.setPreferredSize( new Dimension( 200, 48 ) );
 			this.add(unicode);
-			unicode.setPreferredSize( new Dimension( 100, 24 ) );
+			unicode.setPreferredSize( new Dimension( 120, 24 ) );
 			this.add(description);
 			description.setPreferredSize( new Dimension( 200, 24 ) );
 			getCharacter.addActionListener(this);
@@ -62,17 +62,19 @@ public class Panel extends JPanel implements ActionListener {
 			CharacterUnicode IWantChar = new CharacterUnicode();
 			//Get the String from the Text Field, then make it a char
 			String hexFormat = IWantChar.getHex(ch);
-			/*
+			
 			String decimalFormat = IWantChar.getDecimal(ch);
 			String unicodeFormat = IWantChar.getUnicode(ch);
-			String description = IWantChar.getDescription(ch);
-			*/
-			hex.setText(hexFormat);
+			//String description = IWantChar.getDescription(ch);
+			
+			hex.setText("Hex: " + hexFormat);
 			Font font1 = new Font("SansSerif", Font.BOLD, 40);
 			largeFont.setFont(font1);
 			largeFont.setHorizontalAlignment(JTextField.CENTER);
 			String whichCharacter = String.valueOf(ch);
 			largeFont.setText(whichCharacter);
+			decimal.setText("Decimal: " + decimalFormat);
+			unicode.setText("Unicode: " + unicodeFormat);
 			
 			
 		}
