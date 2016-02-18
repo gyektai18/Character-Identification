@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 
 public class CSVReaderFunction {
-	public void run() {
+	public String[] run(String hexFormat) {
 		//Make the csvFile a string
 		//and get the file's location.
 		String csvFile = "/Users/gyektai18/Downloads/entityfacts.csv";
@@ -30,27 +30,28 @@ public class CSVReaderFunction {
 			br = new BufferedReader(new FileReader(csvFile));
 			while ((line = br.readLine()) != null) {
 				String test = scan.nextLine();
-			        // use comma as separator
+				// use comma as separator
 				String[] entity = line.split(cvsSplitBy);
+				String theEntity = "";
 				for (int j = 0; j < entity.length; j++) {
-					String theEntity = entity[j].trim();
-					System.out.println(theEntity);
+					entity[j] = entity[j].trim();
+
 
 				}
-				
+				if (line.length() > 2){
+					if (entity[1].equals(unicodeFormat)){
+						return entity;
+
+					}
+				}
 
 
 			}
 			//If these errors occur, output that. 
-			//That's my understanding of Try and catch
 		} catch (IOException e) {}
-		/*
 		
-		//Print done when all lines printed
-		for (int i = 0; i < csvFile.length(); i++)
-		    csvFile[i] = csvFile[i].trim();
-		System.out.println("Done");
-		*/
-	  }
+		return null;
+
+	}
 
 }

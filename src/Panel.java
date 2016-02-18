@@ -99,6 +99,10 @@ public class Panel extends JPanel implements ActionListener {
 			hexEntity.setText(hexEntFormat);
 			decimalEntity.setText(decEntFormat);
 			
+			CSVReaderFunction stuff = new CSVReaderFunction();
+			String alpha = stuff.run(hexFormat);
+			
+			
 			
 			
 		}
