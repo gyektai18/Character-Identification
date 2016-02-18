@@ -29,19 +29,28 @@ public class CSVReaderFunction {
 		try {
 			br = new BufferedReader(new FileReader(csvFile));
 			while ((line = br.readLine()) != null) {
-				System.out.println(line);
 				String test = scan.nextLine();
 			        // use comma as separator
 				String[] entity = line.split(cvsSplitBy);
+				for (int j = 0; j < entity.length; j++) {
+					String theEntity = entity[j].trim();
+					System.out.println(theEntity);
+
+				}
+				
 
 
 			}
 			//If these errors occur, output that. 
 			//That's my understanding of Try and catch
 		} catch (IOException e) {}
+		/*
 		
 		//Print done when all lines printed
+		for (int i = 0; i < csvFile.length(); i++)
+		    csvFile[i] = csvFile[i].trim();
 		System.out.println("Done");
+		*/
 	  }
 
 }
