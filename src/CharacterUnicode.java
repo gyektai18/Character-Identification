@@ -9,7 +9,7 @@ public class CharacterUnicode {
 	public String getHex(char ch) {
 		//Returns the Unicode value of the character
 		return
-		("Hex Decimal: 0x" + Integer.toHexString(ch | 0x10000).substring(1) );
+		("0x" + Integer.toHexString(ch | 0x10000).substring(1) );
 		
 	}
 	

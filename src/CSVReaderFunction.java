@@ -23,34 +23,36 @@ public class CSVReaderFunction {
 		BufferedReader br = null;
 		String line = "";
 		String cvsSplitBy = ",";
+		String[] entity = {"no","no","no","no","no"};
 		//Create a scanner to see when enter is pressed
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Hit enter for next line");
 		try {
 			br = new BufferedReader(new FileReader(csvFile));
 			while ((line = br.readLine()) != null) {
-				String test = scan.nextLine();
+				//String test = scan.nextLine();
 				// use comma as separator
-				String[] entity = line.split(cvsSplitBy);
-				String theEntity = "";
+				entity = line.split(cvsSplitBy);
 				for (int j = 0; j < entity.length; j++) {
 					entity[j] = entity[j].trim();
 
 
 				}
-				if (line.length() > 2){
-					if (entity[1].equals(unicodeFormat)){
+				if (entity.length > 2){
+					if (entity[1].equals(hexFormat)){
 						return entity;
+						
+						}
 
 					}
 				}
 
 
-			}
+			
 			//If these errors occur, output that. 
 		} catch (IOException e) {}
-		
-		return null;
+		String[] otherStuffHappens = {"no","no","no","no","no"};
+		return otherStuffHappens;
 
 	}
 

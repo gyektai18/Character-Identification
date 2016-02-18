@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class Panel extends JPanel implements ActionListener {
@@ -19,6 +20,7 @@ public class Panel extends JPanel implements ActionListener {
 	JTextField hexEntity = new JTextField("Hex Entity");
 	JTextField java = new JTextField("Java Code");
 	JTextField UTF8 = new JTextField("UTF8");
+	JTextField alphaEntity = new JTextField("Alpha");
 	
 	
 	
@@ -48,8 +50,11 @@ public class Panel extends JPanel implements ActionListener {
 			java.setPreferredSize( new Dimension( 100, 24 ) );
 			this.add(UTF8);
 			UTF8.setPreferredSize( new Dimension( 100, 24 ) );
+			this.add(alphaEntity);
+			alphaEntity.setPreferredSize(new Dimension( 200, 24) );
 			this.add(largeFont);
 			largeFont.setPreferredSize( new Dimension( 200, 48 ) );
+			
 			
 			getCharacter.addActionListener(this);
 			getCharacter2.addActionListener(this);
@@ -91,7 +96,7 @@ public class Panel extends JPanel implements ActionListener {
 			largeFont.setHorizontalAlignment(JTextField.CENTER);
 			String whichCharacter = String.valueOf(ch);
 			largeFont.setText(whichCharacter);
-			hex.setText(hexFormat);
+			hex.setText("Hex: " + hexFormat);
 			decimal.setText("Decimal: " + decimalFormat);
 			unicode.setText("Unicode: " + unicodeFormat);
 			java.setText(javaFormat);
@@ -100,7 +105,11 @@ public class Panel extends JPanel implements ActionListener {
 			decimalEntity.setText(decEntFormat);
 			
 			CSVReaderFunction stuff = new CSVReaderFunction();
-			String alpha = stuff.run(hexFormat);
+			String[] entity = stuff.run(hexFormat);
+			String descriptions = entity[4];
+			String alphaEntities = entity[3];
+			alphaEntity.setText("Alpha: " + alphaEntities);
+			description.setText(descriptions);
 			
 			
 			

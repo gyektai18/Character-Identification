@@ -9,14 +9,12 @@
  */
 public class MainCallsAndSuch {
 	public static void main(String[] args){
-		CSVReaderFunction obj = new CSVReaderFunction();
-		obj.run();
-		/*
+		
 		Frame makeIt = new Frame();
 		Panel it = new Panel();
 		makeIt.addPanel(it);
 		makeIt.showFrame();
-		*/
+		
 }
 
 
